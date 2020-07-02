@@ -1,7 +1,16 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from "react"
+import { toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import "bootstrap-4-grid/css/grid.min.css"
+import Layout from "./src/components/ui/layout"
+//import NavigationContextProvider from "./src/context/navigation-context-provider"
 
-// You can delete this file if you're not using it
+toast.configure()
+
+export const wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>
+}
+
+// export const wrapRootElement = ({ element }) => {
+//   return <NavigationContextProvider>{element}</NavigationContextProvider>
+// }
